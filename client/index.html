@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+  </head>
+  <body>
+    <div id="loginContainer" class="login-container">
+      <h2>Login to Chat</h2>
+      <input type="text" id="nameInput" placeholder="Enter your name..." />
+      <button id="loginButton">Login</button>
+    </div>
+
+    <div class="container" id="chatAppContainer" style="display: none">
+      <div class="chat-list-container">
+        <button id="createChatButton" onclick="openCreateChatModal()">+</button>
+        <div class="chat-list-item" onclick="selectChat('General')">
+          General Chat
+        </div>
+        <div class="chat-list-item" onclick="selectChat('User 1')">
+          Private Chat with User 1
+        </div>
+      </div>
+
+      <div class="chat-container">
+        <div class="chat-header">
+          <h2 id="chatTitle">Chat</h2>
+          <span id="connectionStatus"
+            >Connected as: <span id="userName"></span
+          ></span>
+        </div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-input">
+          <input
+            type="text"
+            id="messageInput"
+            placeholder="Type your message..."
+          />
+          <button id="sendButton" onclick="sendMessage()">Send</button>
+        </div>
+      </div>
+    </div>
+    <div
+      id="createChatModal"
+      style="
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      "
+    >
+      <h3>Create New Chat</h3>
+      <button onclick="selectChatType('private')">Private Chat</button>
+      <button onclick="selectChatType('group')">Group Chat</button>
+
+      <div id="privateChatForm" style="display: none; margin-top: 15px">
+        <input
+          type="text"
+          id="privateChatUserName"
+          placeholder="Enter user's name..."
+        />
+        <button onclick="createPrivateChat()">Create Private Chat</button>
+      </div>
+
+      <div id="groupChatForm" style="display: none; margin-top: 15px">
+        <input
+          type="text"
+          id="groupNameInput"
+          placeholder="Enter group name..."
+        />
+        <div id="participantsList">
+          <input
+            type="text"
+            class="participant-input"
+            placeholder="Enter participant name..."
+          />
+        </div>
+        <button onclick="addParticipantInput()">+</button>
+        <button onclick="createGroupChat()">Create Group Chat</button>
+      </div>
+
+      <button onclick="closeCreateChatModal()">Close</button>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
