@@ -2,13 +2,13 @@
 
 ## STACK
 
-# FRONT END
+## FRONT END
 
 - JavaScript
 - HTML
 - CSS
 
-# BACK END
+## BACK END
 
 - Nest.js
 - PostgreSQL
