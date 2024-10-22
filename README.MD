@@ -1,14 +1,14 @@
-### REALTIME CHAT ON NEST.JS AND VANILLA JS
+# REALTIME CHAT ON NEST.JS AND VANILLA JS
 
 ## STACK
 
-## FRONT END
+### FRONT END
 
 - JavaScript
 - HTML
 - CSS
 
-## BACK END
+### BACK END
 
 - Nest.js
 - PostgreSQL
@@ -25,7 +25,7 @@ npm start
 
 ### PROJECT OVERVIEW
 
-# Key Functionalities
+## Key Functionalities
 
 - Login
 
@@ -55,7 +55,7 @@ Incoming messages are automatically added to the chat view
 
 The user is notified of the application requirements if they use an incorrect method of interaction with the app
 
-# Back end project structure
+## Back end project structure
 
 - The backend code is organized into different modules, following a modular architecture that makes the application easier to manage and extend. The directory structure is as follows:
 
@@ -69,7 +69,7 @@ The user is notified of the application requirements if they use an incorrect me
 
 - main.ts: The bootstrap file that initializes the NestJS application.
 
-# Database Overview
+## Database Overview
 
 - The application uses PostgreSQL as the database, and TypeORM is used for interacting with the database. The main entities are:
 
@@ -81,7 +81,7 @@ The user is notified of the application requirements if they use an incorrect me
 
 - GroupMessage: Stores messages sent in group chats.
 
-### Key Functionalities
+## Key Functionalities
 
 - User Authentication
 
@@ -107,7 +107,7 @@ PrivateMessage and GroupMessage entities are used to store messages in the datab
 
 Users can fetch historical messages using the endpoints provided by messages.controller.ts
 
-### API Overview
+## API Overview
 
 - Authentication Endpoint (/auth/login): Accepts a username and returns a JWT token.
 
@@ -117,7 +117,7 @@ Users can fetch historical messages using the endpoints provided by messages.con
 
 - Message Endpoints (/messages): Allows fetching message history for a user.
 
-### ISSUES (FUTURE UPDATES)
+## ISSUES (FUTURE UPDATES)
 
 - chat history (implemented only on back end)
 - ability to sent messages to specific group in the chat
